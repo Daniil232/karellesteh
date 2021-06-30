@@ -15,3 +15,5 @@
 	<link rel="shortcut icon" href="img/favicon/favicon.ico">
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
+
+<body>
