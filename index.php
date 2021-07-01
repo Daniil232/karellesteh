@@ -5,15 +5,11 @@ require_once("include/functions.php");
 $website_title = 'PHP блог';
 require_once('blocks/head.php');
 
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
-$limit = 4;
-$offset = $limit * ($page - 1);
-// $products = get_tableLimit(`productsview`, $limit, $offset);
 $products = get_table('productsview');
 $categories = get_table('categories');
 $categoryparts = get_table('categoryparts');
-$marks = get_table('marks');
 $models = get_table('models');
+$marks = get_table('marks');
 $conditions = get_table('conditions');
 
 $selectCategory = "Все категории";
@@ -23,22 +19,18 @@ $selectCategorypart = "Все виды";
 if (isset($_GET['selectCategory'])) {
   $selectCategory = $_GET['selectCategory'];
   $_SESSION['selectCategory'] = $selectCategory;
-  echo $selectCategory;
 }
 if (isset($_GET['selectMark'])) {
   $selectMark = $_GET['selectMark'];
   $_SESSION['selectMark'] = $selectMark;
-  echo $selectMark;
 }
 if (isset($_GET['selectModel'])) {
   $selectModel = $_GET['selectModel'];
   $_SESSION['selectModel'] = $selectModel;
-  echo $selectModel;
 }
 if (isset($_GET['selectCategorypart'])) {
   $selectCategorypart = $_GET['selectCategorypart'];
   $_SESSION['selectCategorypart'] = $selectCategorypart;
-  echo $selectCategorypart;
 }
 require_once('blocks/header.php');
 ?>
@@ -46,15 +38,26 @@ require_once('blocks/header.php');
   <div class="row">
     <form method="get">
       <?php
-
       dropdownCreate('Категория', 'Все категории', 'selectCategory', $categories);
       dropdownCreate('Марка ', 'Все марки', 'selectMark', $marks);
+
       ?>
+
       <div class="col">
         <label for="selectModel" class="form-label">Модель:</label>
         <select class="form-select" name="selectModel" id="selectModel">
-          <option selected>Все модели</option>';
-          <option value="test">test</option>
+          <option selected>...</option>';
+          <?php
+          if (isset($_GET['selectMark'])) {
+            $sql = "SELECT * FROM `modelsview` WHERE markName = :markName";
+            $query = $pdo->prepare($sql);
+            $query->execute(['markName' => $selectMark]);
+            $models = $query->fetchAll(PDO::FETCH_OBJ);
+            foreach ($models as $row) {
+          ?>
+              <option value="<?= $row->modelName ?>"><?= $row->modelName ?></option>
+          <?php }
+          } ?>
         </select>
       </div>
       <?php
@@ -62,14 +65,14 @@ require_once('blocks/header.php');
       dropdownCreate('Вид запчасти', 'Все виды', 'selectCategorypart', $categoryparts);
       ?>
       <div class="col align-self-end">
-        <button type="submit" id="btnSelectSeach" class="btn btn-success mt-3" name="btn_submit_seach">
+        <button type="submit" id="btnSelectSearch" class="btn btn-success mt-3" name="btn_submit_seach">
           Поиск
         </button>
       </div>
     </form>
   </div>
 
-  <div class="row" id="result"></div>
+  <div id="result"></div>
   <div class="row" id="errorBlock"></div>
 
   <div class="table-responsive">
@@ -88,7 +91,7 @@ require_once('blocks/header.php');
         foreach ($products as $product) :
           if ($product->category == $selectCategory || $selectCategory == "Все категории") {
             if ($product->mark == $selectMark || $selectMark == "Все марки") {
-              if ($product->model == $selectModel || $selectModel == "Все модели") {
+              if ($product->model == $selectModel || $selectModel == "Все модели" || $selectModel == "...") {
                 if ($product->categoryPart == $selectCategorypart || $selectCategorypart == "Все виды") {
         ?>
                   <tr>
@@ -122,4 +125,5 @@ require_once('blocks/header.php');
   // require_once ('blocks/posts.php');
   // require_once ('blocks/blog.php');
   require_once("blocks/footer.php");
+
   ?>

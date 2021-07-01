@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 	<link rel="shortcut icon" href="img/favicon/favicon.ico">
-	<script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
