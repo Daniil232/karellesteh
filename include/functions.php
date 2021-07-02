@@ -8,7 +8,14 @@ function get_tableLimit($nameTable, $limit, $offset)
 	$obj = $query->fetchAll(PDO::FETCH_OBJ);
 	return $obj;
 }
-
+function get_tableSql($sql)
+{
+	global $pdo;
+	$query = $pdo->prepare($sql);
+	$query->execute();
+	$obj = $query->fetchAll(PDO::FETCH_OBJ);
+	return $obj;
+}
 function get_table($nameTable)
 {
 	global $pdo;

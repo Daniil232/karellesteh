@@ -3,19 +3,25 @@ $(document).ready(function() {
 		if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
 		   return decodeURIComponent(name[1]);
 	}
-
+	
 	let selectCategory = get('selectCategory');
 	let selectMark = get('selectMark');
 	let selectModel = get('selectModel');
 	let selectCategorypart = get('selectCategorypart');
-	if (selectMark == 'John+Deere')
-		selectMark = "John Deere";
+	if (selectCategory)
+		selectCategory = selectCategory.replace(/\+/g, " ");
+	if (selectMark)
+		selectMark = selectMark.replace(/\+/g, " ");
+	if (selectModel)
+		selectModel = selectModel.replace(/\+/g, " ");
+	if (selectCategorypart)
+		selectCategorypart = selectCategorypart.replace(/\+/g, " ");
 	$(`#selectCategory :contains(${selectCategory})`).attr("selected", "selected");
 	$(`#selectMark :contains(${selectMark})`).attr("selected", "selected");
 	$(`#selectModel :contains(${selectModel})`).attr("selected", "selected");
 	$(`#selectCategorypart :contains(${selectCategorypart})`).attr("selected", "selected");
 		
-	$('#selectMark').on('load change', function() {
+	$('#selectMark').on('change', function() {
 		let markName = $('#selectMark').val();
 		$.ajax({
 			url: './actions/query.php',
@@ -33,5 +39,7 @@ $(document).ready(function() {
 		})
    });
 
+
+   
 })
 

@@ -10,12 +10,12 @@ $categories = get_table('categories');
 $categoryparts = get_table('categoryparts');
 $models = get_table('models');
 $marks = get_table('marks');
-$conditions = get_table('conditions');
 
 $selectCategory = "Все категории";
 $selectMark = "Все марки";
 $selectModel = "Все модели";
 $selectCategorypart = "Все виды";
+
 if (isset($_GET['selectCategory'])) {
   $selectCategory = $_GET['selectCategory'];
   $_SESSION['selectCategory'] = $selectCategory;
@@ -111,13 +111,12 @@ require_once('blocks/header.php');
         <?php }
               }
             }
-          } else {
-            continue;
           }
         endforeach; ?>
       </tbody>
     </table>
   </div>
+
 
 
   <?php

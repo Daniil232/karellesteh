@@ -9,8 +9,6 @@ $query = $pdo->prepare($sql);
 $query->execute(['markName' => $markName]);
 $models = $query->fetchAll(PDO::FETCH_OBJ);
 
-// $marks = get_table('modelsview');
-
 if (!$models) {
 ?>
 	<option>...</option>
