@@ -3,76 +3,36 @@ $(document).ready(function() {
 	input.addEventListener("input", mask, false);
 	input.focus();
 	setCursorPosition(3, input);
-
-	let selectCategory = get('selectCategory');
-	let selectMark = get('selectMark');
-	let selectModel = get('selectModel');
-	let selectCategorypart = get('selectCategorypart');
-	if (selectCategory)
-		selectCategory = selectCategory.replace(/\+/g, " ");
-	if (selectMark)
-		selectMark = selectMark.replace(/\+/g, " ");
-	if (selectModel)
-		selectModel = selectModel.replace(/\+/g, " ");
-	if (selectCategorypart)
-		selectCategorypart = selectCategorypart.replace(/\+/g, " ");
-	$(`#selectCategory :contains(${selectCategory})`).attr("selected", "selected");
-	$(`#selectMark :contains(${selectMark})`).attr("selected", "selected");
-	$(`#selectModel :contains(${selectModel})`).attr("selected", "selected");
-	$(`#selectCategorypart :contains(${selectCategorypart})`).attr("selected", "selected");
-		
-	$('#selectMark').on('change', function() {
-		let markName = $('#selectMark').val();
+	$("#btn_send_mess").on('click',function() {
+		let name = $('#name').val();
+		let email = $('#email').val();
+		let tel = $('#tel').val();
+		let mess = $('#mess').val();
 		$.ajax({
-			url: './actions/query.php',
-			type: 'POST',
+			type: "POST",
+			url: "actions/contact.php",
 			data: {
-				'markName' : markName
+				'name': name,
+				'email': email,
+				'tel': tel,
+				'mess': mess
 			},
-			success: function (res) {
-				$('#selectModel').html(res);
-			},
-			error: function (res) {
-				console.log(res);
-				alert("Ошибка");
+			success: function(msg) {
+				if(msg == 'OK') {
+					result = '<p>Ваш заказ принят</p>';
+					$('.fields').hide();
+					$('.note').hide();
+					$('.success').html(result);
+				} else {
+					$('.note').show();
+					result = msg;
+				}
+				$('.note').html(result);
 			}
-		})
-   });
-   $("#btn_send_mess").on('click',function() {
-	let name = $('#name').val();
-	let email = $('#email').val();
-	let tel = $('#tel').val();
-	let mess = $('#mess').val();
-	$.ajax({
-		type: "POST",
-		url: "actions/contact.php",
-		data: {
-			'name': name,
-			'email': email,
-			'tel': tel,
-			'mess': mess
-		},
-		success: function(msg) {
-			if(msg == 'OK') {
-				result = '<p>Ваш заказ принят</p>';
-				$('.fields').hide();
-				$('.note').hide();
-				$('.success').html(result);
-			} else {
-				$('.note').show();
-				result = msg;
-			}
-			$('.note').html(result);
-		}
-		});
-	return false;
-});
+			});
+		return false;
+	});
 })
-
-function get(name){
-	if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
-	   return decodeURIComponent(name[1]);
-}
 
 function setCursorPosition(pos, e) {
 	e.focus();

@@ -12,31 +12,20 @@ if (!is_numeric($productId)) {
 $website_title = 'PHP блог';
 require_once('blocks/head.php');
 require_once('blocks/header.php');
-
-
 //Получаем массив товаров
 $products = get_table_by_id('productsview', $productId);
+
+
 foreach ($products as $product) :
 ?>
 	<section id="section-content" class="section-odd">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6">
-					<div class="breadcrumb-wrapper">
-						<ol class="breadcrumb">
-							<li>
-								<a href="/">Главная</a>
-							</li>
-							<li>
-								<a href="/shop/parts/">Запасные части</a>
-							</li>
-							<li>
-								<a href="/shop/parts/?filter_group=612">Гидравлические компоненты</a>
-							</li>
-						</ol>
-					</div>
-					<h3 class="title underline"><?= $product->name ?></h3>
-				</div>
+				<?php
+				$nameProduct = $product->name;
+				require_once('blocks/breadcrumb.php');
+				?>
+				<h3 class="title underline"><?= $product->name ?></h3>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">

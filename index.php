@@ -42,3 +42,4 @@ require_once('blocks/header.php');
 // require_once ('blocks/blog.php');
 require_once("blocks/footer.php");
 ?>
+<script type="text/javascript" src="js/main.js"></script>

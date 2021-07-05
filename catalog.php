@@ -32,6 +32,7 @@ if (isset($_GET['selectCategorypart'])) {
   $selectCategorypart = $_GET['selectCategorypart'];
   $_SESSION['selectCategorypart'] = $selectCategorypart;
 }
+
 require_once('blocks/header.php');
 ?>
 <main class="container">
@@ -124,5 +125,5 @@ require_once('blocks/header.php');
   // require_once ('blocks/posts.php');
   // require_once ('blocks/blog.php');
   require_once("blocks/footer.php");
-
   ?>
+  <script type="text/javascript" src="js/catalog.js"></script>
