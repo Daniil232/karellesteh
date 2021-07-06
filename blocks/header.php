@@ -1,4 +1,4 @@
-<section class="main-navbar">
+<section class="main-navbar mb-3">
   <div class="container">
     <div class="row">
       <nav class="navbar navbar-expand-lg navbar-dark">

@@ -76,7 +76,7 @@ require_once('blocks/header.php');
   <div id="result"></div>
   <div class="row" id="errorBlock"></div>
 
-  <div class="table-responsive">
+  <div class="table-responsive ">
     <table class="table align-middle">
       <thead>
         <tr>
