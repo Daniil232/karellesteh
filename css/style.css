@@ -1,3 +1,8 @@
+.navbar-default.affix {
+	top:0;
+	left:0;
+	right:0;
+}
 /* картинка на странице */
 .minimized {
   width: 300px;
@@ -109,7 +114,9 @@ td img {
 }
 
 #thumbs a:hover {
-  border-color: #FF9900;
+  /* background: #FF9900; */
+  opacity: 0.69;
+  transition: all 0.3s;
 }
 
 #thumbs li {
@@ -133,4 +140,14 @@ td img {
   /*Установите размер стекла лупы:*/
   width: 150px;
   height: 150px;
+}
+
+#social span {
+ padding-left: 10px;
+}
+
+#social a:hover {
+  /* color: #ffee00; */
+  opacity: 0.69;
+  transition: all 0.3s;
 }
