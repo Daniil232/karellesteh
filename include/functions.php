@@ -28,7 +28,7 @@ function get_table($nameTable)
 function dropdownCreate($titleselect, $namearia, $nameid, $array)
 {
 	echo '
-		<div class="col">
+		<div class="col-md-5 col-lg-3">
 		<label for="' . $nameid . '" class="form-label">' . $titleselect . ':</label>
 		<select class="form-select" name="' . $nameid . '" id="' . $nameid . '">
 		<option selected>' . $namearia . '</option>';

@@ -8,7 +8,7 @@ require_once('blocks/carousel.php');
 require_once('blocks/posts.php');
 ?>
 <section class="section-request" style="background: black;">
-	<div class=" container mt-3 mb-3 pt-5 pb-5">
+	<div class="container mt-3 mb-3 pt-5 pb-5">
 		<div class="row">
 			<div class="col-sm-10 text-center">
 				<p>Если Вы не нашли нужную деталь в каталоге, Вы можете обратиться к нашим менеджерам</p>

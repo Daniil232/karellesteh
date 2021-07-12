@@ -1,3 +1,11 @@
+#carouselExampleIndicators {
+  position: relative;
+}
+
+#carouselExampleIndicators img {
+  object-fit: cover;
+  height: 500px;
+}
 .navbar-default.affix {
 	top:0;
 	left:0;

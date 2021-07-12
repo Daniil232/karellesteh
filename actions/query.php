@@ -13,10 +13,12 @@ if (!$models) {
 ?>
 	<option>...</option>
 <?php
-}
-
-foreach ($models as $row) {
+} else {
 ?>
-	<option value="<?= $row->modelName ?>"><?= $row->modelName ?></option>
+	<option>...</option>
+	<?php
+	foreach ($models as $row) {
+	?>
+		<option value="<?= $row->modelName ?>"><?= $row->modelName ?></option>
 <?php }
-?>
+} ?>

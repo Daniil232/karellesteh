@@ -1,5 +1,5 @@
-<section class="main-navbar fixed-top">
-  <!-- <section class="main-navbar mb-3 "> -->
+<!-- <section class="main-navbar fixed-top"> -->
+<section class="main-navbar mb-3 ">
   <div class="container">
     <div class="row">
       <nav class="navbar navbar-expand-lg navbar-dark position-sticky">
@@ -24,7 +24,6 @@
             <li class="nav-item">
               <a class="nav-link" href="form_register.php">Регистрация</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="form_auth.php">Авторизация</a>
             </li>
