@@ -1,3 +1,5 @@
+
+
 #carouselExampleIndicators {
   position: relative;
 }
@@ -158,4 +160,29 @@ td img {
   /* color: #ffee00; */
   opacity: 0.69;
   transition: all 0.3s;
+}
+
+.footer-navigation>ul{ 
+  padding: 0; 
+  margin: 0; 
+  list-style: none;
+}
+
+.footer-navigation>ul>li>a{
+  text-decoration: none;
+}
+
+.footer {
+  background-color: rgb(224, 215, 215);
+}
+
+.title {
+  color:#FFF;
+}
+
+.map-info {
+  position: absolute; 
+  top: 0;
+  background: black; 
+  height:100%;
 }

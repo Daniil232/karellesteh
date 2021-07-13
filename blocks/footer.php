@@ -1,161 +1,83 @@
-<!-- Footer -->
-<footer class="page-footer font-small stylish-color-dark pt-4">
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-
-    <!-- Grid row -->
+<footer class="footer pt-3 mt-3">
+  <div class="container">
     <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
-
-        <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
-
+      <div class="col-12 col-lg-6">
+        <img src="img/test.jpg" id="footer-logo" style="width: 374px; height: 156px;">
       </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
+      <div class="col-6 col-lg-3">
+        <h3 class="title">Навигация</h3>
+        <div class="footer-navigation">
+          <ul>
+            <li>
+              <a href="/" title="Главная">Главная</a>
+            </li>
+            <li>
+              <a href="/#about" title="О нас">О нас</a>
+            </li>
+            <li>
+              <a href="/vehicles/harvesters/" title="Харвестеры">Харвестеры</a>
+            </li>
+            <li>
+              <a href="/vehicles/forwarders/" title="Форвардеры">Форвардеры</a>
+            </li>
+            <li>
+              <a href="/shop/parts/" title="Запчасти">Запчасти</a>
+            </li>
+            <li>
+              <a href="/products/" title="Продукция">Продукция</a>
+            </li>
+            <li>
+              <a href="/news/" title="Новости">Новости</a>
+            </li>
+            <li>
+              <a href="/#contacts" title="Контакты">Контакты</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
+      <div class="col-6 col-lg-3">
+        <h3 class="title">Контакты</h3>
+        <strong>Продажа запчастей</strong>
+        <p>Сергей Сапожников<br> <i class="fa fa-vk fa-lg"></i>
+          +7(931)965-44-94<br>
+          Илья Романов<br>
+          +7(921)097-22-70</p>
+        <strong>Мы в соцсетях:</strong>
+        <div class="d-flex justify-content-start" id="social">
+          <div class="vk">
+            <a href="#">
+              <span style="font-size: 32px; color: #597da3; padding-left: 0px;">
+                <i class="fa fa-vk fa-lg"></i>
+              </span>
+            </a>
+          </div>
+          <div class="twit">
+            <a href="#">
+              <span style="font-size: 32px; color: #00acee;">
+                <i class="fa fa-twitter fa-lg"></i>
+              </span>
+            </a>
+          </div>
+          <div class="fb">
+            <a href="">
+              <span style="font-size: 32px; color: #3b5998;">
+                <i class="fa fa-facebook-square fa-lg"></i>
+              </span>
+            </a>
+          </div>
+          <div class="ok">
+            <a href="#">
+              <span style="font-size: 32px; color: #ed812b;">
+                <i class="fa fa-odnoklassniki-square fa-lg"></i>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
-
   </div>
-  <!-- Footer Links -->
-
-  <hr>
-
-  <!-- Call to action -->
-  <ul class="list-unstyled list-inline text-center py-2">
-    <li class="list-inline-item">
-      <h5 class="mb-1">Register for free</h5>
-    </li>
-    <li class="list-inline-item">
-      <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
-    </li>
-  </ul>
-  <!-- Call to action -->
-
-  <hr>
-
-  <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-    <li class="list-inline-item">
-      <a class="btn-floating btn-fb mx-1">
-        <i class="fab fa-facebook-f"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-tw mx-1">
-        <i class="fab fa-twitter"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-gplus mx-1">
-        <i class="fab fa-google-plus-g"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-li mx-1">
-        <i class="fab fa-linkedin-in"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-dribbble mx-1">
-        <i class="fab fa-dribbble"> </i>
-      </a>
-    </li>
-  </ul>
-  <!-- Social buttons -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-
 </footer>
-<!-- Footer -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
