@@ -9,7 +9,13 @@ $database = "karellesteh"; /* Имя базы данных, которую со�
 
 // Подключение к базе данных через MySQLi
 $dsn = 'mysql:host=' . $server . ';dbname=' . $database;
-$pdo = new PDO($dsn, $username, $password);
+try {
+	$con = new PDO($dsn, $username, $password);
+	// set the PDO error mode to exception
+	$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+	echo "Database connection failed: " . $e->getMessage();
+}
 
 //Для удобства, добавим здесь переменную, которая будет содержать название нашего сайта
 $address_site = "http://localhost/karellesteh/";

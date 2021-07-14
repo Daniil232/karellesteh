@@ -16,6 +16,10 @@ $(document).ready(function() {
 	$(`#selectModel :contains(${selectModel})`).attr("selected", "selected");
 	$(`#selectCategorypart :contains(${selectCategorypart})`).attr("selected", "selected");
 	
+	$('#records-limit').change(function() {
+		$('form').submit();
+	});
+
 	$('#selectMark').on('change', function() {
 		let markName = $('#selectMark').val();
 		$.ajax({

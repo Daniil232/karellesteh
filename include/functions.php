@@ -1,26 +1,26 @@
 <?php
 function get_tableLimit($nameTable, $limit, $offset)
 {
-	global $pdo;
+	global $con;
 	$sql = "SELECT * FROM `" . $nameTable . "` LIMIT $limit OFFSET $offset";
-	$query = $pdo->prepare($sql);
+	$query = $con->prepare($sql);
 	$query->execute();
 	$obj = $query->fetchAll(PDO::FETCH_OBJ);
 	return $obj;
 }
 function get_tableSql($sql)
 {
-	global $pdo;
-	$query = $pdo->prepare($sql);
+	global $con;
+	$query = $con->prepare($sql);
 	$query->execute();
 	$obj = $query->fetchAll(PDO::FETCH_OBJ);
 	return $obj;
 }
 function get_table($nameTable)
 {
-	global $pdo;
+	global $con;
 	$sql = "SELECT * FROM `" . $nameTable . "`";
-	$query = $pdo->prepare($sql);
+	$query = $con->prepare($sql);
 	$query->execute();
 	$obj = $query->fetchAll(PDO::FETCH_OBJ);
 	return $obj;
@@ -40,9 +40,9 @@ function dropdownCreate($titleselect, $namearia, $nameid, $array)
 
 function get_table_by_id($nameTable, $id)
 {
-	global $pdo;
+	global $con;
 	$sql = "SELECT * FROM `" . $nameTable . "` WHERE id = " . $id;
-	$query = $pdo->prepare($sql);
+	$query = $con->prepare($sql);
 	$query->execute();
 	$obj = $query->fetchAll(PDO::FETCH_OBJ);
 	return $obj;

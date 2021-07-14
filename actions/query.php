@@ -5,9 +5,10 @@ require_once("../include/functions.php");
 $markName = trim(filter_var($_POST['markName'], FILTER_SANITIZE_STRING));
 
 $sql = "SELECT * FROM `modelsview` WHERE markName = :markName";
-$query = $pdo->prepare($sql);
+$query = $con->prepare($sql);
 $query->execute(['markName' => $markName]);
 $models = $query->fetchAll(PDO::FETCH_OBJ);
+var_dump($models);
 
 if (!$models) {
 ?>

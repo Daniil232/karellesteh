@@ -19,7 +19,7 @@
               <a class="nav-link" href="catalog.php">Каталог</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reviews</a>
+              <a class="nav-link" href="test1.php">Reviews</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="form_register.php">Регистрация</a>
