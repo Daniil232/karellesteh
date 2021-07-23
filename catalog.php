@@ -7,10 +7,10 @@ require_once('blocks/head.php');
 require_once('pagination.php');
 
 $url = $_SERVER['REQUEST_URI'];
-$url = preg_replace('/\b(\w+=\d+)&((?1))/', '$2', $url);
-
+echo $url;
+$url = preg_replace('/[&|?]page=\d/', '', $url);
+// $url = preg_replace('/\b(\w+=\d+)&((?1))/', '$2', $url);
 // echo $url;
-// $products = get_table('productsview');
 $categories = get_table('categories');
 $categoryparts = get_table('categoryparts');
 $models = get_table('models');
@@ -113,7 +113,7 @@ require_once('blocks/header.php');
     // $sql .= ' LIMIT 1000';
     $products = get_tableSql($sql);
 
-    $peger = new ArrayPaginator($url, 3);
+    $peger = new ArrayPaginator($url, 2);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>
