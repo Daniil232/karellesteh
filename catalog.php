@@ -4,7 +4,12 @@ require_once("include/db.php");
 require_once("include/functions.php");
 $website_title = 'PHP блог';
 require_once('blocks/head.php');
+require_once('pagination.php');
 
+$url = $_SERVER['REQUEST_URI'];
+$url = preg_replace('/\b(\w+=\d+)&((?1))/', '$2', $url);
+
+// echo $url;
 // $products = get_table('productsview');
 $categories = get_table('categories');
 $categoryparts = get_table('categoryparts');
@@ -32,25 +37,6 @@ if (isset($_GET['selectCategorypart'])) {
   $selectCategorypart = $_GET['selectCategorypart'];
   $_SESSION['selectCategorypart'] = $selectCategorypart;
 }
-
-if (isset($_POST['records-limit'])) {
-  $_SESSION['records-limit'] = $_POST['records-limit'];
-}
-
-$limit = isset($_SESSION['records-limit']) ? $_SESSION['records-limit'] : 3;
-$page = (isset($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
-$paginationStart = ($page - 1) * $limit;
-$products = $con->query("SELECT * FROM productsview LIMIT $paginationStart, $limit")->fetchAll();
-
-// Get total records
-$sql = $con->query("SELECT count(id) AS id FROM productsview")->fetchAll();
-$allRecrods = $sql[0]['id'];
-// Calculate total pages
-$totoalPages = ceil($allRecrods / $limit);
-
-// Prev + Next
-$prev = $page - 1;
-$next = $page + 1;
 
 require_once('blocks/header.php');
 ?>
@@ -94,7 +80,7 @@ require_once('blocks/header.php');
       <div class="row" id="errorBlock"></div>
 
     </div>
-    <div class="d-flex flex-row-reverse bd-highlight mb-3">
+    <!-- <div class="d-flex flex-row-reverse bd-highlight mb-3">
       <form action="catalog.php" method="post">
         <select name="records-limit" id="records-limit" class="custom-select">
           <option disabled selected>Records Limit</option>
@@ -105,87 +91,77 @@ require_once('blocks/header.php');
           <?php endforeach; ?>
         </select>
       </form>
-    </div>
+    </div> -->
+    <?php
+    $conditions = array();
+    if (!empty($_REQUEST['selectCategory']) && $selectCategory != "Все категории")
+      $conditions[] = "category = '" . $selectCategory . "'";
 
-    <div class="table-responsive">
-      <table class="table align-middle">
-        <thead>
-          <tr>
-            <th scope="col">Изображение</th>
-            <th scope="col">Наименование</th>
-            <th scope="col">Год</th>
-            <th scope="col">Состояние</th>
-            <th scope="col">Категория</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          foreach ($products as $product) :
-            if ($product["category"] == $selectCategory || $selectCategory == "Все категории") {
-              if ($product["mark"] == $selectMark || $selectMark == "Все марки") {
-                if ($product["model"] == $selectModel || $selectModel == "Все модели" || $selectModel == "...") {
-                  if ($product["categoryPart"] == $selectCategorypart || $selectCategorypart == "Все виды") {
-          ?>
-                    <tr>
-                      <td scope="row">
-                        <a href="product.php?productId=<?= $product["id"] ?>">
-                          <img src="<?= $product["img"] ?>" alt="Книга">
-                        </a>
-                      </td>
-                      <td>
-                        <a href="product.php?productId=<?= $product["id"] ?>"><?= $product["name"] ?>
-                        </a>
-                      </td>
-                      <td><?= $product["year"] ?></td>
-                      <td><?= $product["condtion"] ?></td>
-                      <td><?= $product["categoryPart"] ?></td>
-                    </tr>
-          <?php
-                  }
-                }
-              }
-            }
-          endforeach; ?>
+    if (!empty($_REQUEST['selectMark']) && $selectMark != "Все марки")
+      $conditions[] = "mark = '" . $selectMark . "'";
 
-        </tbody>
-      </table>
-    </div>
+    if (!empty($_REQUEST['selectModel']) && ($selectModel != "..."))
+      $conditions[] = "model = '" . $selectModel . "'";
 
-    <!-- Pagination -->
-    <nav aria-label="Page navigation example mt-5">
-      <ul class="pagination justify-content-center">
-        <li class="page-item <?php if ($page <= 1) {
-                                echo 'disabled';
-                              } ?>">
-          <a class="page-link" href="<?php if ($page <= 1) {
-                                        echo '#';
-                                      } else {
-                                        echo "?page=" . $prev;
-                                      } ?>">Previous</a>
-        </li>
+    if (!empty($_REQUEST['selectCategorypart']) && $selectCategorypart != "Все виды")
+      $conditions[] = "categoryPart = '" . $selectCategorypart . "'";
 
-        <?php for ($i = 1; $i <= $totoalPages; $i++) : ?>
-          <li class="page-item <?php if ($page == $i) {
-                                  echo 'active';
-                                } ?>">
-            <a class="page-link" href="catalog.php?page=<?= $i; ?>"> <?= $i; ?> </a>
-          </li>
-        <?php endfor; ?>
+    $sql = 'select * from productsview ';
+    if (!empty($conditions)) {
+      $sql .= ' where ' . implode(' AND ', $conditions);
+    }
+    // $sql .= ' LIMIT 1000';
+    $products = get_tableSql($sql);
 
-        <li class="page-item <?php if ($page >= $totoalPages) {
-                                echo 'disabled';
-                              } ?>">
-          <a class="page-link" href="<?php if ($page >= $totoalPages) {
-                                        echo '#';
-                                      } else {
-                                        echo "?page=" . $next;
-                                      } ?>">Next</a>
-        </li>
-      </ul>
-    </nav>
+    $peger = new ArrayPaginator($url, 3);
+    $items = $peger->getItems($products);
+    if (empty($items)) {
+    ?>
+      <div class="row">
+        <h2>По данному запросу товары не найдены</h2>
+      </div>
   </div>
-</section>
+<?php } else { ?>
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Изображение</th>
+          <th scope="col">Наименование</th>
+          <th scope="col">Год</th>
+          <th scope="col">Состояние</th>
+          <th scope="col">Категория</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($items as $row) :
+        ?>
+          <tr>
+            <td scope="row">
+              <a href="product.php?productId=<?= $row["id"] ?>">
+                <img src="<?= $row["img"] ?>" alt="Книга">
+              </a>
+            </td>
+            <td>
+              <a href="product.php?productId=<?= $row["id"] ?>"><?= $row["name"] ?>
+              </a>
+            </td>
+            <td><?= $row["year"] ?></td>
+            <td><?= $row["condtion"] ?></td>
+            <td><?= $row["categoryPart"] ?></td>
+          </tr>
+        <?php
+        endforeach; ?>
 
+      </tbody>
+    </table>
+  </div>
+<?php
+      echo $peger->display;
+    } ?>
+</div>
+</section>
 
 <?php
 // require_once ('blocks/carousel.php');

@@ -10,7 +10,13 @@ if (isset($_POST['records-limit'])) {
 $limit = isset($_SESSION['records-limit']) ? $_SESSION['records-limit'] : 3;
 $page = (isset($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 $paginationStart = ($page - 1) * $limit;
-$authors = $con->query("SELECT * FROM productsview LIMIT $paginationStart, $limit")->fetchAll();
+$selectMark = "Харвестер";
+$sql = "SELECT * FROM `productsview` WHERE category = :markName LIMIT $paginationStart, $limit";
+$query = $con->prepare($sql);
+$query->execute(['markName' => $selectMark]);
+$authors = $query->fetchAll();
+
+// $authors = $con->query("SELECT * FROM productsview WHERE category = :  LIMIT $paginationStart, $limit")->fetchAll();
 
 // Get total records
 $sql = $con->query("SELECT count(id) AS id FROM productsview")->fetchAll();

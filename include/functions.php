@@ -13,7 +13,7 @@ function get_tableSql($sql)
 	global $con;
 	$query = $con->prepare($sql);
 	$query->execute();
-	$obj = $query->fetchAll(PDO::FETCH_OBJ);
+	$obj = $query->fetchAll(PDO::FETCH_ASSOC);
 	return $obj;
 }
 function get_table($nameTable)
