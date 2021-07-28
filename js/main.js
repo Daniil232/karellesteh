@@ -1,4 +1,13 @@
 $(document).ready(function() {
+	$("#btnShowContact").on('click', function() {
+		$("#contact").removeClass("note");
+		const el = document.getElementById('contact');
+		el.scrollIntoView({
+			behavior: "smooth",
+			block: "center",
+			inline: "center"
+		});
+	});
 	var input = document.querySelector("#tel");
 	input.addEventListener("input", mask, false);
 	input.focus();

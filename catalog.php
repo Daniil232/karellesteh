@@ -7,10 +7,7 @@ require_once('blocks/head.php');
 require_once('pagination.php');
 
 $url = $_SERVER['REQUEST_URI'];
-echo $url;
 $url = preg_replace('/[&|?]page=\d/', '', $url);
-// $url = preg_replace('/\b(\w+=\d+)&((?1))/', '$2', $url);
-// echo $url;
 $categories = get_table('categories');
 $categoryparts = get_table('categoryparts');
 $models = get_table('models');
@@ -49,7 +46,7 @@ require_once('blocks/header.php');
         dropdownCreate('Категория', 'Все категории', 'selectCategory', $categories);
         dropdownCreate('Марка ', 'Все марки', 'selectMark', $marks);
         ?>
-        <div class="col-md-5 col-lg-2">
+        <div class="col-md-6 col-lg-2">
           <label for="selectModel" class="form-label">Модель:</label>
           <select class="form-select" name="selectModel" id="selectModel">
             <option selected>...</option>';
@@ -113,7 +110,7 @@ require_once('blocks/header.php');
     // $sql .= ' LIMIT 1000';
     $products = get_tableSql($sql);
 
-    $peger = new ArrayPaginator($url, 2);
+    $peger = new ArrayPaginator($url, 3);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>

@@ -18,7 +18,7 @@ require_once('blocks/header.php');
 // require_once ('blocks/carousel.php');
 // require_once ('blocks/posts.php');
 // require_once ('blocks/blog.php');
-require_once("blocks/map.php");
+// require_once("blocks/map.php");
 require_once("blocks/footer.php");
 ?>
 <script type="text/javascript" src="js/main.js"></script>

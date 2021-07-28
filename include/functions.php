@@ -28,7 +28,7 @@ function get_table($nameTable)
 function dropdownCreate($titleselect, $namearia, $nameid, $array)
 {
 	echo '
-		<div class="col-md-5 col-lg-3">
+		<div class="col-md-6 col-lg-3">
 		<label for="' . $nameid . '" class="form-label">' . $titleselect . ':</label>
 		<select class="form-select" name="' . $nameid . '" id="' . $nameid . '">
 		<option selected>' . $namearia . '</option>';
@@ -47,6 +47,17 @@ function get_table_by_id($nameTable, $id)
 	$obj = $query->fetchAll(PDO::FETCH_OBJ);
 	return $obj;
 }
+
+function get_table_by_id1($nameTable, $id)
+{
+	global $con;
+	$sql = "SELECT * FROM `" . $nameTable . "` WHERE product = " . $id;
+	$query = $con->prepare($sql);
+	$query->execute();
+	$obj = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $obj;
+}
+
 
 
 // function get_books_by_year($year_id) {

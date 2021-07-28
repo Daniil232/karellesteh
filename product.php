@@ -12,20 +12,22 @@ $website_title = 'PHP блог';
 require_once('blocks/head.php');
 require_once('blocks/header.php');
 //Получаем массив товаров
-$products = get_table_by_id('productsview', $productId);
+$product = get_table_by_id('productsview', $productId);
+$acceptability = get_table_by_id1('acceptabilityview', $productId);
 
-
-foreach ($products as $row) :
+foreach ($product as $row) :
 	$arrImg = explode(" ", $row->addImg);
 ?>
 	<section id="section-content" class="section-odd">
 		<div class="container">
 			<div class="row">
 				<?php
+				$categoryName = $row->categoryPart;
+				$getCategoryName = preg_replace('/ /', '+', $categoryName);
 				$nameProduct = $row->name;
 				require_once('blocks/breadcrumb.php');
 				?>
-				<h3 class="title underline"><?= $row->name ?></h3>
+				<h3><?= $row->name ?></h3>
 			</div>
 			<div class="row">
 				<div class="col">
@@ -52,15 +54,43 @@ foreach ($products as $row) :
 				<div class="col">
 					<table class="table">
 						<tbody>
+							<?php if ($row->code != "") { ?>
+								<tr>
+									<td>Код:
+									</td>
+									<td><?= $row->code ?></td>
+								</tr>
+							<?php } ?>
 							<tr>
-								<td>Применимость:
+								<td>Производитель:
 								</td>
-								<td><?= $row->mark ?></td>
+								<td><?= $row->manufacturer ?></td>
 							</tr>
 							<tr>
 								<td>Применимость:
 								</td>
 								<td><?= $row->mark ?></td>
+							</tr>
+							<?php if (!empty($acceptability)) {
+								foreach ($acceptability as $row2) {
+									if ($row2["name"] != $row->mark) {
+							?>
+										<tr>
+											<td>Применимость: </td>
+											<td> <?= $row2["name"] ?></td>
+										</tr>
+							<?php }
+								}
+							} ?>
+							<tr>
+								<td>Состояние:
+								</td>
+								<td><?= $row->condition ?></td>
+							</tr>
+							<tr>
+								<td>Год:
+								</td>
+								<td><?= $row->year ?></td>
 							</tr>
 							<tr>
 								<td>Ариткул производителя:
@@ -145,8 +175,30 @@ foreach ($products as $row) :
 		</div>
 	</section>
 <?php endforeach; ?>
+<section class="section-request" style="background: black;">
+	<div class="container mt-3 pt-5 pb-5">
+		<div class="row">
+			<div class="col-sm-10 text-center">
+				<p>Если Вы не нашли нужную деталь в каталоге, Вы можете обратиться к нашим менеджерам</p>
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" id="btnShowContact" class="btn btn-success" name="btnShowContact" onclick="$(this).hide();">
+					Оставить заявку
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div id="contact" class="contact note">
+				<?php
+				require_once('blocks/contact-form.php');
+				?>
+			</div>
+		</div>
+	</div>
+</section>
 <?php
 require("blocks/footer.php");
 ?>
 <script type="text/javascript" src="js/gallery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script src="https://use.fontawesome.com/b6af12b7e9.js"></script>
