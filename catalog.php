@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once("include/db.php");
-require_once("include/functions.php");
+require("include/db.php");
+require("include/functions.php");
 $website_title = 'PHP блог';
-require_once('blocks/head.php');
-require_once('pagination.php');
+require('blocks/head.php');
+require('pagination.php');
 
 $url = $_SERVER['REQUEST_URI'];
 $url = preg_replace('/[&|?]page=\d/', '', $url);
@@ -77,18 +77,6 @@ require_once('blocks/header.php');
       <div class="row" id="errorBlock"></div>
 
     </div>
-    <!-- <div class="d-flex flex-row-reverse bd-highlight mb-3">
-      <form action="catalog.php" method="post">
-        <select name="records-limit" id="records-limit" class="custom-select">
-          <option disabled selected>Records Limit</option>
-          <?php foreach ([3, 5, 7, 10, 12] as $limit) : ?>
-            <option <?php if (isset($_SESSION['records-limit']) && $_SESSION['records-limit'] == $limit) echo 'selected'; ?> value="<?= $limit; ?>">
-              <?= $limit; ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
-      </form>
-    </div> -->
     <?php
     $conditions = array();
     if (!empty($_REQUEST['selectCategory']) && $selectCategory != "Все категории")

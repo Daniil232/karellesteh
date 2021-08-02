@@ -1,24 +1,26 @@
 <?php
 session_start();
-require_once("include/db.php");
+require("include/db.php");
 $website_title = 'PHP блог';
-require_once('blocks/head.php');
-require_once('blocks/header.php');
+require('blocks/head.php');
+require('blocks/header.php');
 ?>
-<main class="contact-form">
+<section class="contact-form">
 	<div class="container">
 		<div class="row">
-			<?php
-			require_once('blocks/contact-form.php');
-			?>
+			<div id="contact" class="contact">
+				<?php
+				require('blocks/contact-form.php');
+				?>
+			</div>
 		</div>
 	</div>
-</main>
+</section>
 <?php
 // require_once ('blocks/carousel.php');
 // require_once ('blocks/posts.php');
 // require_once ('blocks/blog.php');
 // require_once("blocks/map.php");
-require_once("blocks/footer.php");
+require("blocks/footer.php");
 ?>
 <script type="text/javascript" src="js/main.js"></script>

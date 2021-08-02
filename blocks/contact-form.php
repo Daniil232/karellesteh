@@ -1,4 +1,4 @@
-<section class="contact-form">
+<div class="contact-form">
 	<form method="POST" action="">
 		<h2 class="text-center">Контактная форма</h2>
 		<div class="note text-center alert alert-danger"></div>
@@ -26,4 +26,4 @@
 				</div>
 		</div>
 	</form>
-</section>
+</div>

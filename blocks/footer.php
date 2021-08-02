@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-6">
-        <img src="img/test.jpg" id="footer-logo" style="width: 374px; height: 156px;">
+        <img src="img/logo.png" id="footer-logo" style="width: 350px; height: 150px;">
       </div>
       <div class="col-6 col-lg-3">
         <h3 class="title">Навигация</h3>

@@ -15,10 +15,6 @@ $(document).ready(function() {
 	$(`#selectMark :contains(${selectMark})`).attr("selected", "selected");
 	$(`#selectModel :contains(${selectModel})`).attr("selected", "selected");
 	$(`#selectCategorypart :contains(${selectCategorypart})`).attr("selected", "selected");
-	
-	$('#records-limit').change(function() {
-		$('form').submit();
-	});
 
 	$('#selectMark').on('change', function() {
 		let markName = $('#selectMark').val();
