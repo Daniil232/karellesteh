@@ -1,8 +1,8 @@
 <div class="contact-form">
 	<form method="POST" action="">
-		<h2 class="text-center">Контактная форма</h2>
-		<div class="note text-center alert alert-danger"></div>
-		<div class="success text-center"></div>
+		<p class="text-center contact-text">Свяжитесь с нами</p>
+		<div class="note text-center alert contact-error"></div>
+		<div class="success text-center contact-success"></div>
 		<div class="fields">
 			<form class="contact-form" method="POST" action="">
 				<div class="form-group">
@@ -22,7 +22,7 @@
 					<textarea class="form-control" id="mess" rows="3" autofocus="autofocus">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aliquid.</textarea>
 				</div>
 				<div class="text-center">
-					<button type="submit" class=" btn btn-primary mt-3" autofocus="autofocus" id="btn_send_mess">Отправить</button>
+					<button type="submit" class=" btn btn-success mt-3" autofocus="autofocus" id="btn_send_mess">Отправить</button>
 				</div>
 		</div>
 	</form>

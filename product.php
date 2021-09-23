@@ -87,46 +87,54 @@ foreach ($product as $row) :
 								</td>
 								<td><?= $row->condition ?></td>
 							</tr>
+							<?php if ($row->vendorcode != "") { ?>
+								<tr>
+									<td>Ариткул производителя:
+									</td>
+									<td><?= $row->vendorCode ?></td>
+								</tr>
+							<?php } ?>
+							<?php if ($row->addition != "") { ?>
+								<tr>
+									<td>Примечание:
+									</td>
+									<td><?= $row->addition ?></td>
+								</tr>
+							<?php } ?>
 							<tr>
-								<td>Год:
+								<td>Местонахождение:
 								</td>
-								<td><?= $row->year ?></td>
-							</tr>
-							<tr>
-								<td>Ариткул производителя:
-								</td>
-								<td><?= $row->vendorCode ?></td>
+								<td><?= $row->location ?></td>
 							</tr>
 						</tbody>
 					</table>
-					<h3>Связаться с продавцами:</h3>
+					<h3 class="product-contact">Связаться с продавцами:</h3>
 					<div class="row">
 						<div class="col">
-							Илья Романов<br>
+							Олег Баранов<br>
 							<span>
 								<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-								+7(921)0972270
+								+7(921)466-56-74
 							</span>
 							<br>
 							<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-							<a href="#">123@mail.ru</a>
+							<a href="#">karellesteh@gmail.com</a>
 							<br>
 							<i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
-							Санкт-Петербург, Ленинградская область,пос. Стеклянный
+							Республика Карелия, Петрозаводск, район Томицы
 						</div>
 						<div class="col">
-							Сергей Сапожников
-							<br>
+							Олег Баранов<br>
 							<span>
 								<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-								+7(931)9654494
+								+7(921)466-56-74
 							</span>
 							<br>
 							<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-							<a href="#">312@gmail.com</a>
+							<a href="#">karellesteh@gmail.com</a>
 							<br>
 							<i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
-							Санкт-Петербург, Ленинградская область,пос. Стеклянный
+							Республика Карелия, Петрозаводск, район Томицы
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -175,13 +183,13 @@ foreach ($product as $row) :
 		</div>
 	</section>
 <?php endforeach; ?>
-<section class="section-request" style="background: black;">
+<section class="section-request">
 	<div class="container mt-3 pt-5 pb-5">
 		<div class="row">
-			<div class="col-sm-10 text-center">
+			<div class="col-sm-9 text-center" id="contact-text-message">
 				<p>Если Вы не нашли нужную деталь в каталоге, Вы можете обратиться к нашим менеджерам</p>
 			</div>
-			<div class="col-sm-2">
+			<div class="col-sm-3">
 				<button type="submit" id="btnShowContact" class="btn btn-success" name="btnShowContact" onclick="$(this).hide();">
 					Оставить заявку
 				</button>

@@ -1,8 +1,8 @@
-<footer class="footer pt-3">
+<footer class="footer pt-3 pb-3">
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-6">
-        <img src="img/logo.png" id="footer-logo" style="width: 350px; height: 150px;">
+        <img src="img/logo.png" id="footer-logo" style="width: 350px;">
       </div>
       <div class="col-6 col-lg-3">
         <h3 class="title">Навигация</h3>
@@ -37,12 +37,15 @@
       </div>
       <div class="col-6 col-lg-3">
         <h3 class="title">Контакты</h3>
-        <strong>Продажа запчастей</strong>
-        <p>Сергей Сапожников<br>
-          +7(931)965-44-94<br>
-          Илья Романов<br>
-          +7(921)097-22-70</p>
-        <strong>Мы в соцсетях:</strong>
+        <strong style="color: #33A64B;">Продажа запчастей</strong>
+        <p>Олег Баранов<br>
+          <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+          +7(921)466-56-74<br>
+          Олег Баранов<br>
+          <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+          +7(921)466-56-74
+        </p>
+        <strong style="color: #33A64B;">Мы в соцсетях:</strong>
         <div class="d-flex justify-content-start" id="social">
           <div class="vk">
             <a href="#">

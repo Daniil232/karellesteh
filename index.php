@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("include/db.php");
-$website_title = 'PHP блог';
+$website_title = 'Главная страница';
 require('blocks/head.php');
 require('blocks/header.php');
 ?>

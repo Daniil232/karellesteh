@@ -1,0 +1,3 @@
+Монитор для Ponsse Buffalo
+161517 C
+Display node ac: 243

@@ -1,6 +1,116 @@
+/* main color: #33A64B; */
+body { 
+  /* background: url("../img/t.png"); 
+  background-attachment: fixed; /* Фон страницы фиксируется 
+	background-repeat: repeat; */
+  /* background-color: #33A64B; */
+  color: #000;
+}
+
+.table-responsive th {
+  text-align: center;
+}
+
+.table-responsive th:first-child {
+  text-align: left;
+}
+
+.table-responsive td {
+  text-align: center;
+}
+
+.form-group input {
+  border: 1px solid #33A64B;
+}
+
+.form-group textarea {
+  border: 1px solid #33A64B;
+}
+
+.form-select {
+  border: 1px solid #33A64B;
+}
+
+a {
+  color: #000;
+    font-weight: 400;
+    transition: all 0.3s;
+    /* text-transform:uppercase; */
+}
+
+a:hover {
+  color: #33A64B;
+    /* opacity: 0.69; */
+    transition: all 0.3s;
+    /* text-transform:uppercase; */
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color:#000;
+  font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+  color: #33A64B;
+    font-weight: 400;
+    opacity: 0.69;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.navbar-light .navbar-toggler {
+  color: #33A64B;
+  border: 2px solid #33A64B;
+}
+
+.btn-success {
+  background-color: #33A64B;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #217233;
+  border: none;
+}
+
+.contact-success {
+  color: #FFFFFF;
+}
+
+.navbar-toggler .collapsed {
+  color: #000;
+}
+
+.contact-text {
+  color: #fff;
+}
+
+.fa-phone {
+  color: #33A64B;
+}
+
+.fa-envelope {
+  color: #33A64B;
+}
+
+.fa-location-arrow {
+  color: #33A64B;
+}
+
+.breadcrumb a{
+  text-decoration: none;
+}
+
+.form-group label {
+  color: #fff;
+}
+
+.breadcrumb{
+  text-transform: uppercase;
+}
+
 .navbar-brand img {
-  width: 75px;
-  height: 75px;
+  height: 100px;
 }
 #carouselExampleIndicators {
   position: relative;
@@ -22,7 +132,7 @@
 }
 
 img.minimized:hover {
-  border: 1px solid rgb(136, 136, 136);
+  /* border: 1px solid rgb(136, 136, 136); */
 }
 /* увеличенная картинка */
 #magnify {
@@ -68,20 +178,41 @@ img.minimized:hover {
   display: block;
 }
 
+.contact-error {
+  background-color: #fff;
+  color: rgb(219, 61, 61);
+}
 
+thead {
+  border-bottom: 1px solid #33A64B;
+}
+tr {
+  border-bottom: 1px solid #33A64B;
+}
 td img {
   width: 350px;
-  height: 200px;
+  height: 250px;
 }
+
+td a:hover {
+  opacity: 0.69;
+}
+
+.name-uppercase {
+  text-transform: uppercase;
+}
+
 .main-navbar {
-    background-color: #000000;
+    background-color: #fff;
+    border-bottom: 2px solid #33A64B;
 }
 .main-navbar .nav-item a {
-    color: #ffffff;
+    color: #000;
     font-weight: 400;
     font-size: 14px;
     opacity: 0.69;
     transition: all 0.3s;
+    text-transform:uppercase;
 }
 
 .main-navbar .nav-item img {
@@ -90,9 +221,12 @@ td img {
 }
 
 .main-navbar .nav-item a:hover {
-    color: #ff9b51;
+    color: #33A64B;
 } 
 
+.product-contact {
+  color: #33A64B;
+}
 .note {
 	display: none;
 }
@@ -106,7 +240,7 @@ td img {
 #largeImg {
   /* border: solid 1px #ccc; */
   width: 550px;
-  height: 400px;
+  height: 600px;
   padding: 5px;
 }
 
@@ -167,6 +301,7 @@ td img {
   padding: 0; 
   margin: 0; 
   list-style: none;
+  font-weight: 500;
 }
 
 .footer-navigation>ul>li>a{
@@ -174,11 +309,12 @@ td img {
 }
 
 .footer {
-  background-color: rgb(224, 215, 215);
+  background-color: #fff;
+  border-top: 2px solid #33A64B;
 }
 
 .title {
-  color:#FFF;
+  color:#33A64B;
 }
 
 .map-info {
@@ -186,6 +322,62 @@ td img {
   top: 0;
   background: black; 
   height:100%;
+  font-size: 20px;
+  color: #fff;
 }
 
+.section-request {
+  background-color: #b3b4b3;
+}
 
+.benefits .fa {
+  font-size: 46px;
+  color: #33A64B;
+}
+
+.benefits_item h3 {
+  font-weight: 500;
+}
+
+.benefits_item h5 {
+  font-weight: 400;
+}
+
+.section_header {
+  text-align: center;
+  padding: 30px;
+  border-bottom: 2px solid #33A64B;
+}
+
+.map-header {
+  margin-top: 15px;
+}
+
+.map-bottom p{
+  margin: 0;
+}
+
+.description {
+  background-color: #b3b4b3;
+}
+
+.description img {
+  width: 100%;
+  height: 400px;
+}
+
+.featurette-heading {
+  color: #33A64B;
+}
+
+.contact-text {
+  font-weight: 500;
+  font-size: 36px;
+  color: #33A64B;
+}
+
+#contact-form {
+  padding: 20px 0px;
+  border-top: 2px solid #33A64B;
+  background-color: #b3b4b3;
+}

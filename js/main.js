@@ -1,12 +1,15 @@
 $(document).ready(function() {
 	$("#btnShowContact").on('click', function() {
 		$("#contact").removeClass("note");
+		const test = document.getElementById('contact-text-message');
+		test.classList.add("note");
 		const el = document.getElementById('contact');
 		el.scrollIntoView({
 			behavior: "smooth",
 			block: "center",
 			inline: "center"
 		});
+		console.log(1);
 	});
 	var input = document.querySelector("#tel");
 	input.addEventListener("input", mask, false);
@@ -28,7 +31,7 @@ $(document).ready(function() {
 			},
 			success: function(msg) {
 				if(msg == 'OK') {
-					result = '<p>Ваш заказ принят</p>';
+					result = '<p>Спасибо! Ваша заявка принята. Мы перезвоним Вам!</p>';
 					$('.fields').hide();
 					$('.note').hide();
 					$('.success').html(result);

@@ -2,7 +2,7 @@
 session_start();
 require("include/db.php");
 require("include/functions.php");
-$website_title = 'PHP блог';
+$website_title = 'Каталог';
 require('blocks/head.php');
 require('pagination.php');
 
@@ -37,8 +37,7 @@ if (isset($_GET['selectCategorypart'])) {
 
 require_once('blocks/header.php');
 ?>
-<section class="catalog">
-
+<section class="catalog mt-3">
   <div class="container">
     <div class="catalog-filter mb-3">
       <form class="row" method="get">
@@ -98,7 +97,7 @@ require_once('blocks/header.php');
     // $sql .= ' LIMIT 1000';
     $products = get_tableSql($sql);
 
-    $peger = new ArrayPaginator($url, 3);
+    $peger = new ArrayPaginator($url, 30);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>
@@ -113,7 +112,6 @@ require_once('blocks/header.php');
         <tr>
           <th scope="col">Изображение</th>
           <th scope="col">Наименование</th>
-          <th scope="col">Год</th>
           <th scope="col">Состояние</th>
           <th scope="col">Категория</th>
         </tr>
@@ -125,15 +123,14 @@ require_once('blocks/header.php');
           <tr>
             <td scope="row">
               <a href="product.php?productId=<?= $row["id"] ?>">
-                <img src="<?= $row["img"] ?>" alt="Книга">
+                <img src="<?= $row["img"] ?>" alt="">
               </a>
             </td>
             <td>
-              <a href="product.php?productId=<?= $row["id"] ?>"><?= $row["name"] ?>
+              <a class="name-uppercase" href="product.php?productId=<?= $row["id"] ?>"><?= $row["name"] ?>
               </a>
             </td>
-            <td><?= $row["year"] ?></td>
-            <td><?= $row["condtion"] ?></td>
+            <td><?= $row["condition"] ?></td>
             <td><?= $row["categoryPart"] ?></td>
           </tr>
         <?php

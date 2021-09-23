@@ -1,9 +1,9 @@
 <!-- <section class="main-navbar fixed-top"> -->
-<header class="main-navbar mb-3 ">
+<header class="main-navbar">
   <div class="container">
     <div class="row">
-      <nav class="navbar navbar-expand-lg navbar-dark position-sticky">
-        <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="Логотип"></a>
+      <nav class="navbar navbar-expand-lg position-sticky navbar-light">
+        <a class="navbar-brand" href="index.php"><img src="img/logoMini.png" alt="Логотип"></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
