@@ -2,14 +2,31 @@ $(document).ready(function() {
 	$("#btnShowContact").on('click', function() {
 		$("#contact").removeClass("note");
 		const test = document.getElementById('contact-text-message');
-		test.classList.add("note");
-		const el = document.getElementById('contact');
-		el.scrollIntoView({
+		test.classList.add("hide");
+		const contact = document.getElementById('contact');
+		contact.scrollIntoView({
 			behavior: "smooth",
 			block: "center",
 			inline: "center"
 		});
-		console.log(1);
+	});
+
+	$(".nav-item .about").on('click', function() {
+		const contact = document.getElementById('description');
+		contact.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+			inline: "start"
+		});
+	});
+
+	$(".nav-item .news").on('click', function() {
+		const news = document.getElementById('news');
+		news.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+			inline: "start"
+		});
 	});
 	var input = document.querySelector("#tel");
 	input.addEventListener("input", mask, false);

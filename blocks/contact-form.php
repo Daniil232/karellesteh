@@ -11,7 +11,7 @@
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" autofocus="autofocus" placeholder="name@example.com" value="name@example.com" pattern="(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})">
+					<input type="email" class="form-control" id="email" autofocus="autofocus" placeholder="name@example.com" pattern="(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})">
 				</div>
 				<div class=" form-group">
 					<label for="tel">Телефон</label>
@@ -19,7 +19,7 @@
 				</div>
 				<div class="form-group">
 					<label for="mess">Сообщение</label>
-					<textarea class="form-control" id="mess" rows="3" autofocus="autofocus">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aliquid.</textarea>
+					<textarea class="form-control" id="mess" rows="3" autofocus="autofocus"></textarea>
 				</div>
 				<div class="text-center">
 					<button type="submit" class=" btn btn-success mt-3" autofocus="autofocus" id="btn_send_mess">Отправить</button>

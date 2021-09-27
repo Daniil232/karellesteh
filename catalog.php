@@ -5,6 +5,7 @@ require("include/functions.php");
 $website_title = 'Каталог';
 require('blocks/head.php');
 require('pagination.php');
+$home = false;
 
 $url = $_SERVER['REQUEST_URI'];
 $url = preg_replace('/[&|?]page=\d/', '', $url);
@@ -94,10 +95,29 @@ require_once('blocks/header.php');
     if (!empty($conditions)) {
       $sql .= ' where ' . implode(' AND ', $conditions);
     }
+
     // $sql .= ' LIMIT 1000';
     $products = get_tableSql($sql);
+    $sql1 = "SELECT name FROM productsview GROUP BY name";
+    $productDistinct = get_tableSql($sql1);
 
-    $peger = new ArrayPaginator($url, 30);
+    foreach ($productDistinct as $row) {
+      $count = 0;
+      foreach ($products as $i => $row1) {
+        if ($row1["name"] == $row["name"]) {
+          $count++;
+          if ($count > 1) {
+            unset($products[$i]);
+            continue;
+          }
+        }
+      }
+    }
+    // echo '<pre>';
+    // print_r($products);
+    // echo '</pre>';
+
+    $peger = new ArrayPaginator($url, 5);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>
@@ -106,7 +126,7 @@ require_once('blocks/header.php');
       </div>
   </div>
 <?php } else { ?>
-  <div class="table-responsive">
+  <div class="table-responsive table-filter">
     <table class="table align-middle">
       <thead>
         <tr>
@@ -123,7 +143,7 @@ require_once('blocks/header.php');
           <tr>
             <td scope="row">
               <a href="product.php?productId=<?= $row["id"] ?>">
-                <img src="<?= $row["img"] ?>" alt="">
+                <img src="<?= $row["img"] ?>" alt="<?= $row["alt"] ?>">
               </a>
             </td>
             <td>
@@ -144,11 +164,30 @@ require_once('blocks/header.php');
     } ?>
 </div>
 </section>
-
+<section id="contact-form">
+  <div class="container mt-3 pt-3 pb-3">
+    <div class="row">
+      <div class="col-sm-9 text-center" id="contact-text-message">
+        <p>По всем интересующимися вопросами вы можете обратиться к нашим менеджерам</p>
+      </div>
+      <div class="col-sm-3 contact-form-buttonShow">
+        <button type="submit" id="btnShowContact" class="btn btn-success" name="btnShowContact" onclick="$(this).hide();">
+          Оставить заявку
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div id="contact" class="contact note">
+        <?php
+        require_once('blocks/contact-form.php');
+        ?>
+      </div>
+    </div>
+  </div>
+</section>
 <?php
-// require_once ('blocks/carousel.php');
-// require_once ('blocks/posts.php');
-// require_once ('blocks/blog.php');
 require_once("blocks/footer.php");
 ?>
+<script type="text/javascript" src="js/main.js"></script>
+
 <script type="text/javascript" src="js/catalog.js"></script>

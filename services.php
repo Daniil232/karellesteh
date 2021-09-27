@@ -48,20 +48,5 @@ $services = get_table('services');
 </section>
 
 <?php
-require("blocks/contact-form-button.php");
 require("blocks/footer.php");
 ?>
-<script>
-	$(document).ready(function() {
-		$("#btnShowContact").on('click', function() {
-			$("#contact").removeClass("note");
-			const el = document.getElementById('contact');
-			el.scrollIntoView({
-				behavior: "smooth",
-				block: "center",
-				inline: "center"
-			});
-		});
-	})
-</script>
-<script type="text/javascript" src="js/main.js"></script>

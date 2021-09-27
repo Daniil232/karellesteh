@@ -1,26 +1,17 @@
 <?php
 session_start();
-$home = true;
 require("include/db.php");
 require("include/functions.php");
 $news = get_table('news');
-$website_title = 'Кареллестех главная';
+$website_title = 'PHP блог';
 require_once('blocks/head.php');
 require_once('blocks/header.php');
 require_once('blocks/carousel.php');
 require_once('blocks/benefits.php');
 require_once('blocks/description.php');
 require_once('blocks/news.php');
+require_once("blocks/map.php");
 ?>
-<section class="map" id="map">
-	<div class="section_header benefits_header">
-		<h2>Где нас найти</h2>
-	</div>
-	<?php
-	require_once("blocks/map.php");
-	?>
-</section>
-
 <section id="contact-form">
 	<div class="container mt-3 pt-3 pb-3">
 		<div class="row">

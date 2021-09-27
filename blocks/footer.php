@@ -2,35 +2,27 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-6">
-        <img src="img/logo.png" id="footer-logo" style="width: 350px;">
+        <img src="img/logo.png" id="footer-logo">
       </div>
       <div class="col-6 col-lg-3">
         <h3 class="title">Навигация</h3>
         <div class="footer-navigation">
           <ul>
             <li>
-              <a href="/" title="Главная">Главная</a>
+              <a href="index.php" title="Главная">Главная</a>
             </li>
             <li>
-              <a href="/#about" title="О нас">О нас</a>
+              <a href="index.php" title="О нас">О нас</a>
             </li>
             <li>
-              <a href="/vehicles/harvesters/" title="Харвестеры">Харвестеры</a>
+            <li>
+              <a href="catalog.php" title="Каталог">Каталог</a>
             </li>
             <li>
-              <a href="/vehicles/forwarders/" title="Форвардеры">Форвардеры</a>
+              <a href="index.php" title="Новости">Новости</a>
             </li>
             <li>
-              <a href="/shop/parts/" title="Запчасти">Запчасти</a>
-            </li>
-            <li>
-              <a href="/products/" title="Продукция">Продукция</a>
-            </li>
-            <li>
-              <a href="/news/" title="Новости">Новости</a>
-            </li>
-            <li>
-              <a href="/#contacts" title="Контакты">Контакты</a>
+              <a href="contact.php" title="Контакты">Контакты</a>
             </li>
           </ul>
         </div>
@@ -41,9 +33,9 @@
         <p>Олег Баранов<br>
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
           +7(921)466-56-74<br>
-          Олег Баранов<br>
+          Максим Михеев<br>
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-          +7(921)466-56-74
+          +7(921)454-24-04
         </p>
         <strong style="color: #33A64B;">Мы в соцсетях:</strong>
         <div class="d-flex justify-content-start" id="social">

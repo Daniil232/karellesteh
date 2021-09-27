@@ -47,7 +47,7 @@ class ArrayPaginator
 
 		if ($this->amt > 1) {
 			$adj = 2;
-			$this->display = '<nav class="pagination-row"><ul class="pagination justify-content-center">';
+			$this->display = '<nav class="pagination-row mt-3"><ul class="pagination justify-content-center">';
 
 			/* Назад */
 			if ($this->page == 1) {

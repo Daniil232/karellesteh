@@ -1,7 +1,7 @@
 <?php
 require_once("include/db.php");
 require_once("include/functions.php");
-
+$home = false;
 $productId = htmlspecialchars($_GET['productId']);
 
 //Если в book_id не число
@@ -13,7 +13,6 @@ require_once('blocks/head.php');
 require_once('blocks/header.php');
 //Получаем массив товаров
 $product = get_table_by_id('productsview', $productId);
-$acceptability = get_table_by_id1('acceptabilityview', $productId);
 
 foreach ($product as $row) :
 	$arrImg = explode(" ", $row->addImg);
@@ -30,20 +29,20 @@ foreach ($product as $row) :
 				<h3><?= $row->name ?></h3>
 			</div>
 			<div class="row">
-				<div class="col">
+				<div class="col-xs-12 col-md-6">
 					<div class="gallery">
 						<div class="image__wrapper">
-							<img class="largeImg minimized" id="largeImg" src="<?= $row->img ?>" alt="<?= $row->title ?>">
+							<img class="largeImg minimized" id="largeImg" src="<?= $row->img ?>" alt="<?= $row->alt ?>">
 						</div>
 						<div class="thumbs">
 							<ul id="thumbs">
 								<li>
-									<a href="<?= $row->img ?>" title="<?= $row->title ?>"><img src="<?= $row->img ?>"></a>
+									<a href="<?= $row->img ?>" title="<?= $row->alt ?>"><img src="<?= $row->img ?>"></a>
 								</li>
 								<?php if ($arrImg[0] != "") { ?>
 									<?php foreach ($arrImg as $arr) { ?>
 										<li>
-											<a href="<?= $arr ?>" title=""><img src="<?= $arr ?>"></a>
+											<a href="<?= $arr ?>" title="<?= $row->alt ?>"><img src="<?= $arr ?>"></a>
 										</li>
 								<?php }
 								} ?>
@@ -51,7 +50,7 @@ foreach ($product as $row) :
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-xs-12 col-md-6">
 					<table class="table">
 						<tbody>
 							<?php if ($row->code != "") { ?>
@@ -60,34 +59,36 @@ foreach ($product as $row) :
 									</td>
 									<td><?= $row->code ?></td>
 								</tr>
-							<?php } ?>
-							<tr>
-								<td>Производитель:
-								</td>
-								<td><?= $row->manufacturer ?></td>
-							</tr>
-							<tr>
-								<td>Применимость:
-								</td>
-								<td><?= $row->mark ?></td>
-							</tr>
-							<?php if (!empty($acceptability)) {
-								foreach ($acceptability as $row2) {
-									if ($row2["name"] != $row->mark) {
-							?>
-										<tr>
-											<td>Применимость: </td>
-											<td> <?= $row2["name"] ?></td>
-										</tr>
 							<?php }
-								}
+							if ($row->manufacturer != "Не указан") { ?>
+								<tr>
+									<td>Производитель:
+									</td>
+									<td><?= $row->manufacturer ?></td>
+								</tr>
+								<?php }
+							$arr = $row->acceptability;
+							if (!empty($arr)) {
+								$arr = explode(' ', $arr);
+								for ($i = 0; $i < count($arr); $i++) {
+									if ($arr[$i] == "John") {
+										$arr[$i] = "John Deere";
+									}
+									if ($arr[$i] == "Deere")
+										continue; ?>
+									<tr>
+										<td>Применимость:
+										</td>
+										<td><?= $arr[$i] ?></td>
+									</tr>
+							<?php }
 							} ?>
 							<tr>
 								<td>Состояние:
 								</td>
 								<td><?= $row->condition ?></td>
 							</tr>
-							<?php if ($row->vendorcode != "") { ?>
+							<?php if ($row->vendorCode != "") { ?>
 								<tr>
 									<td>Ариткул производителя:
 									</td>
@@ -124,10 +125,10 @@ foreach ($product as $row) :
 							Республика Карелия, Петрозаводск, район Томицы
 						</div>
 						<div class="col">
-							Олег Баранов<br>
+							Максим Михеев<br>
 							<span>
 								<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-								+7(921)466-56-74
+								+7(921)454-24-04
 							</span>
 							<br>
 							<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
@@ -189,7 +190,7 @@ foreach ($product as $row) :
 			<div class="col-sm-9 text-center" id="contact-text-message">
 				<p>Если Вы не нашли нужную деталь в каталоге, Вы можете обратиться к нашим менеджерам</p>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-3 contact-form-buttonShow">
 				<button type="submit" id="btnShowContact" class="btn btn-success" name="btnShowContact" onclick="$(this).hide();">
 					Оставить заявку
 				</button>

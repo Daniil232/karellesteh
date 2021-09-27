@@ -10,20 +10,36 @@
         <div class="navbar-collapse collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Features</span></a>
+              <a class="nav-link" href="index.php">Главная</span></a>
             </li>
+            <?php if ($home) { ?>
+              <li class="nav-item">
+                <a class="nav-link about">О нас</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="catalog.php">Каталог</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link news">Новости</a>
+              </li>
+            <?php } else { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">О нас</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="catalog.php">Каталог</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Новости</a>
+              </li>
+            <?php }  ?>
             <li class="nav-item">
-              <a class="nav-link" href="test.php">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="catalog.php">Каталог</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="test1.php">Reviews</a>
+              <a class="nav-link" href="contact.php">Контакты</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="services.php">Услуги</a>
             </li>
+
           </ul>
         </div>
       </nav>
