@@ -194,7 +194,7 @@ tr {
 td img {
   object-fit: cover;
   width: 400px;
-  max-height: 250px;
+  max-height: 350px;
 }
 
 td a:hover {

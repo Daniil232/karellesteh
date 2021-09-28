@@ -2,17 +2,20 @@
 require_once("include/db.php");
 require_once("include/functions.php");
 $home = false;
+$productLinks = true;
 $productId = htmlspecialchars($_GET['productId']);
-
+//Получаем массив товаров
+$product = get_table_by_id('productsview', $productId);
 //Если в book_id не число
 if (!is_numeric($productId)) {
 	exit();
 }
-$website_title = 'PHP блог';
+foreach ($product as $row) :
+	$website_title = $row->name;
+endforeach;
+
 require_once('blocks/head.php');
 require_once('blocks/header.php');
-//Получаем массив товаров
-$product = get_table_by_id('productsview', $productId);
 
 foreach ($product as $row) :
 	$arrImg = explode(" ", $row->addImg);
@@ -182,6 +185,7 @@ foreach ($product as $row) :
 				</div>
 			</div>
 		</div>
+
 	</section>
 <?php endforeach; ?>
 <section class="section-request">
@@ -208,6 +212,9 @@ foreach ($product as $row) :
 <?php
 require("blocks/footer.php");
 ?>
+<!-- <script src="js/photoswipe.min.js"></script>
+<script src="js/photoswipe-ui-default.min.js"></script>
+<script src="js/script-min.js"></script> -->
 <script type="text/javascript" src="js/gallery.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script src="https://use.fontawesome.com/b6af12b7e9.js"></script>

@@ -8,7 +8,7 @@ require('pagination.php');
 $home = false;
 
 $url = $_SERVER['REQUEST_URI'];
-$url = preg_replace('/[&|?]page=\d/', '', $url);
+$url = preg_replace('/[&|?]page=\d+/', '', $url);
 $categories = get_table('categories');
 $categoryparts = get_table('categoryparts');
 $models = get_table('models');
@@ -117,7 +117,7 @@ require_once('blocks/header.php');
     // print_r($products);
     // echo '</pre>';
 
-    $peger = new ArrayPaginator($url, 5);
+    $peger = new ArrayPaginator($url, 4);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>
