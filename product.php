@@ -122,7 +122,7 @@ foreach ($product as $row) :
 							</span>
 							<br>
 							<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-							<a href="#">karellesteh@gmail.com</a>
+							karellesteh@gmail.com
 							<br>
 							<i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
 							Республика Карелия, Петрозаводск, район Томицы
@@ -135,7 +135,7 @@ foreach ($product as $row) :
 							</span>
 							<br>
 							<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-							<a href="#">karellesteh@gmail.com</a>
+							karellesteh@gmail.com
 							<br>
 							<i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
 							Республика Карелия, Петрозаводск, район Томицы
@@ -144,16 +144,22 @@ foreach ($product as $row) :
 					<div class="row mt-3">
 						<span>Поделиться: </span>
 						<?php
-						$title = 'Заголовок';
-						$url = 'http://yandex.ru';
-						$hashtags = 'теги';
-						$summary = 'Короткое описание';
-						$image_url = 'https://webref.ru/assets/images/font-awesome/fa-03.png';
-						$description = 'Короткое описание';
+						$title = $row->name;
+						$url = 'http://localhost/karellesteh/product.php?productId=' . $row->id . '';
+						$hashtags = 'Кареллестех';
+						$summary = $row->name;
+						$image_url = 'http://localhost/karellesteh/' . $row->img . '';
+						$description = $row->name;
 						?>
 						<div class="d-flex justify-content-start" id="social">
 							<div class="vk">
-								<a href="http://vkontakte.ru/share.php?url=<?php echo urlencode($url); ?>&title=<?php echo $title; ?>&description=<?php echo $description; ?>&image=<?php echo $image_url; ?>&noparse=true" onclick="window.open(this.href, this.title, 'toolbar=0, status=0, width=548, height=325'); return false" title="Сохранить в Вконтакте" target="_parent">
+								<a href="http://vkontakte.ru/share.php?url=<?php
+																			echo urlencode($url); ?>
+								&title=<?php echo $title; ?>
+								&description=<?php echo $description; ?>
+								&image=<?php echo $image_url; ?>
+								&noparse=true" onclick="window.open(this.href, this.title, 'toolbar=0, status=0, width=548, height=325'); 
+								return false" title="Сохранить в Вконтакте" target="_parent">
 									<span style="font-size: 32px; color: #597da3; padding-left: 0px;">
 										<i class="fa fa-vk fa-lg"></i>
 									</span>

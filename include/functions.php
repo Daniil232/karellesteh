@@ -80,25 +80,28 @@ function get_table_by_id1($nameTable, $id)
 // 	$result = mysqli_query($link, $sql);
 
 // 	$year = mysqli_fetch_assoc($result);
-	
+
 // 	return $year['year'];
 // }
 
-// function get_search($search) {
-// 	$sql_seacrh = "";
+function get_search($search)
+{
+	$search = trim(filter_var($search, FILTER_SANITIZE_STRING));
+	$sql_search = "";
 
-// 	$arraywords = explode(" ", $search);
+	$arraywords = explode(" ", $search);
 
-// 	foreach($arraywords as $key => $value) {
-// 		if(isset($arraywords[$key - 1])) $sql_search .= " OR ";
-// 		$sql_search .= "(name LIKE '%$value%' OR `author` LIKE '%$value%')";
-// 	}
-// 	global $link;
+	foreach ($arraywords as $key => $value) {
+		if (isset($arraywords[$key - 1]))
+			$sql_search .= " and ";
+		$sql_search .= "name LIKE '%$value%'";
+		// $sql_search .= "(name LIKE '%$value%' OR `author` LIKE '%$value%')";
+	}
+	global $con;
 
-// 	$sql = "SELECT * FROM `books` WHERE $sql_search";
-// 	$result = mysqli_query($link, $sql);
-
-// 	$search = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-// 	return $search;
-// }
+	$sql = "SELECT * FROM `productsview` WHERE $sql_search";
+	$query = $con->prepare($sql);
+	$query->execute();
+	$obj = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $obj;
+}

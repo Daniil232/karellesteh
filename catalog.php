@@ -117,7 +117,7 @@ require_once('blocks/header.php');
     // print_r($products);
     // echo '</pre>';
 
-    $peger = new ArrayPaginator($url, 10);
+    $peger = new ArrayPaginator($url, 10, $amt = 7);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>
@@ -189,5 +189,4 @@ require_once('blocks/header.php');
 require_once("blocks/footer.php");
 ?>
 <script type="text/javascript" src="js/main.js"></script>
-
 <script type="text/javascript" src="js/catalog.js"></script>

@@ -36,11 +36,17 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Контакты</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.php">Услуги</a>
-            </li>
-
           </ul>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-3 pull-right">
+            <form class="navbar-form" role="search" method="get" action="search.php">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Поиск..." name="search" id="search">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </nav>
     </div>

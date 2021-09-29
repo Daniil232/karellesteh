@@ -1,5 +1,5 @@
 <?php
-$website_title = 'PHP блог';
+$website_title = 'Ошибка 404';
 require_once('blocks/head.php');
 require_once('blocks/header.php');
 ?>
