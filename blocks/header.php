@@ -27,7 +27,7 @@
                 <a class="nav-link" href="index.php">О нас</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="catalog.php">Каталог</a>
+                <a class="nav-link" href="catalog.php">Запчасти</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Новости</a>

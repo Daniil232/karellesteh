@@ -16,7 +16,7 @@
             </li>
             <li>
             <li>
-              <a href="catalog.php" title="Каталог">Каталог</a>
+              <a href="catalog.php" title="Запчасти">Запчасти</a>
             </li>
             <li>
               <a href="index.php" title="Новости">Новости</a>

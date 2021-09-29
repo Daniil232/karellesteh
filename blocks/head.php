@@ -9,17 +9,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- <?php if ($productLinks) { ?>
-		<link rel="stylesheet" href="css/photoswipe.css">
-		<link rel="stylesheet" href="css/default-skin/default-skin.css">
-		<script src="js/jquery.min.js"></script>
-		<script>
-			window.paceOptions = {
-				restartOnPushState: false
-			}
-		</script>
-		<script src="js/pace.min.js"></script>
-	<?php } ?> -->
+	<?php if ($productLinks) {
+	?>
+	<?php } ?>
 
 	<title><?= $website_title ?></title>
 	<!-- Google Fonts -->

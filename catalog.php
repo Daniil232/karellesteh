@@ -2,7 +2,7 @@
 session_start();
 require("include/db.php");
 require("include/functions.php");
-$website_title = 'Каталог';
+$website_title = 'Запчасти';
 require('blocks/head.php');
 require('pagination.php');
 $home = false;
@@ -117,7 +117,7 @@ require_once('blocks/header.php');
     // print_r($products);
     // echo '</pre>';
 
-    $peger = new ArrayPaginator($url, 4);
+    $peger = new ArrayPaginator($url, 10);
     $items = $peger->getItems($products);
     if (empty($items)) {
     ?>

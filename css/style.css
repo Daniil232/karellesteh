@@ -109,6 +109,10 @@ a:hover {
   text-transform: uppercase;
 }
 
+.navbar-brand {
+  margin-right: 0px;
+}
+
 .navbar-brand img {
   height: 100px;
 }
@@ -147,6 +151,7 @@ img.minimized:hover {
 }
 #magnify img {
   width: 100%;
+  max-height: 100%;
 }
 /* затемняющий фон */
 #overlay {
@@ -178,6 +183,11 @@ img.minimized:hover {
   background: url(https://codernote.ru/files/cross.png) no-repeat center center;
   background-size: 16px 16px;
   display: block;
+}
+
+.select{
+  background-color: #33A64B;
+  color:#fff;
 }
 
 .contact-error {
@@ -479,7 +489,7 @@ td a:hover {
     width: 250px;
   }
   .navbar-brand img {
-    width: 300px
+    width: 280px
   }
   .footer img {
     width: 300px;
