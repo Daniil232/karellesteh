@@ -6,8 +6,9 @@
 		<div class="card-deck">
 			<div class="row">
 				<?php foreach ($news as $row) {
-					$date = $row->date;
-					$date = date('d-m-Y H:i:s');
+					$format = 'Y-m-d H:i:s';
+					$date1 = $row->date;
+					$date = DateTime::createFromFormat($format, $date1);
 				?>
 					<div class="col-md-4 col-sm-4 mb-3">
 						<div class="card">
@@ -17,7 +18,7 @@
 								<p class="card-text"><?= $row->text ?></p>
 							</div>
 							<div class="card-footer">
-								<div class="card-footer-text"><?= $date ?></div>
+								<div class="card-footer-text"><?= $date->format('d-m-Y H:i:s'); ?></div>
 							</div>
 						</div>
 					</div>

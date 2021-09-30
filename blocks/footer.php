@@ -43,12 +43,12 @@
         <strong style="color: #33A64B;">Продажа запчастей</strong>
         <p>Олег Баранов<br>
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-          +7(921)466-56-74<br>
+          +7(921) 466-56-74<br>
           Максим Михеев<br>
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-          +7(921)454-24-04
+          +7(921) 454-24-04
         </p>
-        <strong style="color: #33A64B;">Мы в соцсетях:</strong>
+        <strong style="color: #33A64B;">Мы в здесь:</strong>
         <div class="d-flex justify-content-start" id="social">
           <div class="vk">
             <a href="https://vk.com/club128396762" target="_blank">
@@ -57,7 +57,14 @@
               </span>
             </a>
           </div>
-          <div class="twit">
+          <div class="avito">
+            <a href="https://www.avito.ru/i15316416?page_from=from_items_list_icon&iid=1886115350" target="_blank">
+              <span>
+                <img style="width: 100%; height:43px; margin-top:7px;" src="img\Socials\avito.svg" alt="">
+              </span>
+            </a>
+          </div>
+          <!-- <div class="twit">
             <a href="#" target="_blank">
               <span style="font-size: 32px; color: #00acee;">
                 <i class="fa fa-twitter fa-lg"></i>
@@ -77,7 +84,7 @@
                 <i class="fa fa-odnoklassniki-square fa-lg"></i>
               </span>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
