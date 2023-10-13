@@ -1,6 +1,6 @@
 <div class="contact-form">
 	<form method="POST" action="">
-		<p class="text-center contact-text">Свяжитесь с нами</p>
+		<p class="text-center contact-text fields">Свяжитесь с нами</p>
 		<div class="note text-center alert contact-error"></div>
 		<div class="success text-center contact-success"></div>
 		<div class="fields">

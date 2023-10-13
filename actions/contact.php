@@ -27,13 +27,11 @@ if ($post) {
 	}
 
 	if (!$error) {
-		$name_tema = "=?utf-8?b?" . base64_encode($name) . "?=";
-		$subject = "Новая заявка с сайта domain.name";
-		$subject1 = "=?utf-8?b?" . base64_encode($subject) . "?=";
+		$subject = "Новая заявка с сайта karellesteh.ru";
 		$message1 = "\n\nИмя: " . $name . "\n\nТелефон: " . $tel . "\n\nE-mail: " . $email . "\n\nСообщение: " . $mess . "\n\n";
 		$header = "Content-Type: text/plain; charset=utf-8\n";
-		$header .= "From: Новая заявка baranov2394@mail.ru>\n\n";
-		$mail = mail("baranov2394@mail.ru", $subject1, iconv('utf-8', 'windows-1251', $message1), iconv('utf-8', 'windows-1251', $header));
+		$header .= "From: Новая заявка baranov2394@karellesteh.ru>\n\n";
+		$mail = mail("baranov2394@karellesteh.ru", $subject, $message1, $header);
 		if ($mail) {
 			echo 'OK';
 		}

@@ -143,7 +143,7 @@ require_once('blocks/header.php');
           <tr>
             <td scope="row">
               <a href="product.php?productId=<?= $row["id"] ?>">
-                <img src="<?= $row["img"] ?>" alt="<?= $row["alt"] ?>">
+                <img src=" <?= $row["img"] ?>" alt="<?= $row["alt"] ?>">
               </a>
             </td>
             <td>

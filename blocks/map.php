@@ -18,10 +18,10 @@
 				</div>
 				<div class="map-main" style="height: 50px; border-top: 2px solid #33A64B; border-bottom: 2px solid #33A64B;"></div>
 				<div class="map-bottom">
-					<p><b>Олег Баранов</b></p>
+					<p><b>Олег</b></p>
 					<p>+7(921)466-56-74</p>
 					<br>
-					<p><b>Максим Михеев</b></p>
+					<p><b>Максим</b></p>
 					<p>+7(921)454-24-04</p>
 				</div>
 			</div>

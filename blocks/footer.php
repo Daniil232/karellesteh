@@ -21,6 +21,9 @@
               <li class="nav-item">
                 <a class="news" title="Новости">Новости</a>
               </li>
+              <li class="nav-item">
+                <a class="services" href="services.php" title="Услуги">Услуги</a>
+              </li>
             <?php } else { ?>
               <li class="nav-item">
                 <a class="about" href="index.php" title="О нас">О нас</a>
@@ -31,6 +34,9 @@
               <li class="nav-item">
                 <a class="news" href="index.php" title="Новости">Новости</a>
               </li>
+              <li class="nav-item">
+                <a class="services" href="services.php" title="Услуги">Услуги</a>
+              </li>
             <?php }  ?>
             <li class="nav-item">
               <a href="contact.php" title="Контакты">Контакты</a>
@@ -40,15 +46,16 @@
       </div>
       <div class="col-12 col-sm-6 col-md-3 col-lg-3">
         <h3 class="title">Контакты</h3>
-        <strong style="color: #33A64B;">Продажа запчастей</strong>
-        <p>Олег Баранов<br>
+        <strong style="color: #33A64B;">Менеджер по продажам:</strong>
+        <p>Олег<br>
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
           +7(921) 466-56-74<br>
-          Максим Михеев<br>
+          <strong style="color: #33A64B;">Генеральный директор:</strong>
+          <br>Максим<br>
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
           +7(921) 454-24-04
         </p>
-        <strong style="color: #33A64B;">Мы в здесь:</strong>
+        <strong style="color: #33A64B;">Мы здесь:</strong>
         <div class="d-flex justify-content-start" id="social">
           <div class="vk">
             <a href="https://vk.com/club128396762" target="_blank">

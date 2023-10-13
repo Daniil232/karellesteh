@@ -17,10 +17,13 @@
                 <a class="nav-link about">О нас</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="catalog.php">Каталог</a>
+                <a class="nav-link" href="catalog.php">Запчасти</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link news">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.php">Услуги</a>
               </li>
             <?php } else { ?>
               <li class="nav-item">
@@ -31,6 +34,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.php">Услуги</a>
               </li>
             <?php }  ?>
             <li class="nav-item">

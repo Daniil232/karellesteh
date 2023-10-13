@@ -2,7 +2,19 @@ ServerSignature Off
 AddDefaultCharset UTF-8
 
 ErrorDocument 404 /error.php
-ErrorDocument 400 /error.php
 
 RewriteEngine on
-RewriteRule ^product/([^/.]+)/?$ product.php?productId=$1 [L]
+Options -MultiViews
+RewriteEngine On
+
+# external redirect from actual URL to pretty one
+RewriteCond %{THE_REQUEST} \s/+(product/events)\.php\?productId=([^\s&]+) [NC]
+RewriteRule ^ /%1/%2? [R=301,L,NE]
+
+# internal forward from pretty URL to actual one
+RewriteRule ^(post)/(.+)/?$ $1.php?productId=$2 [L,QSA,NC]
+
+# add .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]

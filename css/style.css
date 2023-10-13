@@ -1,7 +1,6 @@
 /* main color: #33A64B; */
-body { 
+body {
   color: #000;
-  font-family: 'Open Sans';
 }
 
 .table-filter th {
@@ -30,29 +29,29 @@ body {
 
 a {
   color: #000;
-    font-weight: 400;
-    transition: all 0.3s;
-    /* text-transform:uppercase; */
+  font-weight: 400;
+  transition: all 0.3s;
+  /* text-transform:uppercase; */
 }
 
 a:hover {
   color: #33A64B;
-    /* opacity: 0.69; */
-    transition: all 0.3s;
-    /* text-transform:uppercase; */
+  /* opacity: 0.69; */
+  transition: all 0.3s;
+  /* text-transform:uppercase; */
 }
 
-.navbar-light .navbar-nav .nav-link{
-  color:#000;
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
   font-weight: 600;
 }
 
-.navbar-light .navbar-nav .nav-link:hover{
+.navbar-light .navbar-nav .nav-link:hover {
   color: #33A64B;
-    font-weight: 400;
-    opacity: 0.69;
-    transition: all 0.3s;
-    font-weight: 600;
+  font-weight: 400;
+  opacity: 0.69;
+  transition: all 0.3s;
+  font-weight: 600;
 }
 
 .navbar-light .navbar-toggler {
@@ -94,7 +93,7 @@ a:hover {
   color: #33A64B;
 }
 
-.breadcrumb a{
+.breadcrumb a {
   text-decoration: none;
 }
 
@@ -102,7 +101,7 @@ a:hover {
   color: #fff;
 }
 
-.breadcrumb{
+.breadcrumb {
   text-transform: uppercase;
 }
 
@@ -113,6 +112,7 @@ a:hover {
 .navbar-brand img {
   height: 100px;
 }
+
 #carouselExampleIndicators {
   position: relative;
 }
@@ -121,11 +121,13 @@ a:hover {
   object-fit: cover;
   height: 500px;
 }
+
 .navbar-default.affix {
-	top:0;
-	left:0;
-	right:0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
+
 /* картинка на странице */
 .minimized {
   width: 300px;
@@ -146,10 +148,12 @@ a:hover {
   z-index: 9999;
   padding: 0 10px;
 }
+
 #magnify img {
   width: 100%;
   max-height: 100%;
 }
+
 /* затемняющий фон */
 #overlay {
   display: none;
@@ -162,6 +166,7 @@ a:hover {
   opacity: 0.5;
   z-index: 9990;
 }
+
 /* кнопка закрытия */
 #close-popup {
   width: 30px;
@@ -174,6 +179,7 @@ a:hover {
   top: 0px;
   right: 0px;
 }
+
 #close-popup i {
   /* width: 30px; */
   height: 30px;
@@ -182,9 +188,9 @@ a:hover {
   display: block;
 }
 
-.select{
+.select {
   background-color: #33A64B;
-  color:#fff;
+  color: #fff;
 }
 
 .contact-error {
@@ -195,9 +201,11 @@ a:hover {
 thead {
   border-bottom: 1px solid #33A64B;
 }
+
 tr {
   border-bottom: 1px solid #33A64B;
 }
+
 td img {
   object-fit: cover;
   width: 100%;
@@ -213,42 +221,44 @@ td a:hover {
 }
 
 .main-navbar {
-    background-color: #fff;
-    border-bottom: 2px solid #33A64B;
+  background-color: #fff;
+  border-bottom: 2px solid #33A64B;
 }
+
 .main-navbar .nav-item a {
-    color: #000;
-    font-weight: 400;
-    font-size: 14px;
-    opacity: 0.69;
-    transition: all 0.3s;
-    text-transform:uppercase;
-    cursor: pointer;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.69;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .main-navbar .nav-item img {
-    height: 25px;
-    width: 25px;
+  height: 25px;
+  width: 25px;
 }
 
 .main-navbar .nav-item a:hover {
-    color: #33A64B;
-} 
+  color: #33A64B;
+}
 
 .product-contact {
   color: #33A64B;
 }
+
 .note {
-	display: none;
+  display: none;
 }
 
 .contact-form {
-    display: block;
-    margin: 0 auto;
-    max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
-.contact-form #btnShowContact{
+.contact-form #btnShowContact {
   text-align: center;
 }
 
@@ -274,7 +284,7 @@ td a:hover {
 }
 
 #thumbs a img {
-  width:100%; 
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -309,7 +319,7 @@ td a:hover {
 }
 
 #social span {
- padding-left: 10px;
+  padding-left: 10px;
 }
 
 #social a:hover {
@@ -318,14 +328,14 @@ td a:hover {
   transition: all 0.3s;
 }
 
-.footer-navigation>ul{ 
-  padding: 0; 
-  margin: 0; 
+.footer-navigation>ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
   font-weight: 500;
 }
 
-.footer-navigation>ul>li>a{
+.footer-navigation>ul>li>a {
   text-decoration: none;
 }
 
@@ -335,14 +345,14 @@ td a:hover {
 }
 
 .title {
-  color:#33A64B;
+  color: #33A64B;
 }
 
 .map-info {
-  position: absolute; 
+  position: absolute;
   top: 0;
-  background: black; 
-  height:100%;
+  background: black;
+  height: 100%;
   font-size: 20px;
   color: #fff;
 }
@@ -378,7 +388,7 @@ td a:hover {
   margin-top: 15px;
 }
 
-.map-bottom p{
+.map-bottom p {
   margin: 0;
 }
 
@@ -410,7 +420,7 @@ td a:hover {
 }
 
 .news img {
-   max-height: 300px;
+  max-height: 300px;
 }
 
 .description button {
@@ -426,7 +436,7 @@ td a:hover {
   margin-bottom: 5px;
 }
 
-.news .card img{
+.news .card img {
   object-fit: cover;
 }
 
@@ -462,7 +472,7 @@ td a:hover {
 .page-item.active .page-link:hover {
   background-color: #217233;
   border: 1px solid #217233;
-} 
+}
 
 .page-link {
   color: #33A64B;
@@ -482,7 +492,7 @@ td a:hover {
 }
 
 .search ul {
-    margin: 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -500,15 +510,19 @@ td a:hover {
   .table-filter img {
     width: 250px;
   }
+
   .navbar-brand img {
     width: 280px
   }
+
   .footer img {
     width: 300px;
   }
+
   .footer {
     text-align: center;
   }
+
   .justify-content-start {
     justify-content: center !important;
   }
@@ -525,12 +539,20 @@ td a:hover {
   }
 }
 
-.input-group-btn i:hover{
+.input-group-btn i:hover {
   color: #217233;
 }
 
-.input-group-btn i{
+.input-group-btn i {
   color: #33A64B;
   font-size: 24px;
 }
 
+thead .theadservices {
+  background-color: #33A64B;
+  /* Цвет фона при наведении */
+}
+
+.services thead #bg-green {
+  background-color: #33A64B;
+}

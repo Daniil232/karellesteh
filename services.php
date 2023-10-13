@@ -2,7 +2,7 @@
 session_start();
 require("include/db.php");
 require("include/functions.php");
-$website_title = 'PHP блог';
+$website_title = 'Услуги';
 require('blocks/head.php');
 require('blocks/header.php');
 $services = get_table('services');
@@ -11,32 +11,43 @@ $services = get_table('services');
 	<div class="container">
 		<div class="services-title">
 			<div class="row">
-				<h1>Список услуг предоставляемой нашей фирмой</h1>
+				<h1>Перечень услуг</h1>
 			</div>
 		</div>
 		<div class="services-table">
-			<div class="table-responsive">
-				<table class="table align-middle">
-					<thead>
+			<div class="table-responsive-sm">
+				<table class="table table-sm table-hover table-bordered">
+					<thead bgcolor="#33A64B">
 						<tr>
 							<th scope="col">№ п/п</th>
 							<th scope="col">Наименование</th>
-							<th scope="col">Цена</th>
 						</tr>
 					</thead>
 					<tbody>
+					<!-- <ul>                                
+     <li>1ый маркированного списка</li>        
+     <li>2ой маркированного списка            
+         <ol>                            
+             <li>1ый нумерованного списка</li>    
+             <li>2ой нумерованного списка</li>    
+             <li>3ий нумерованного списка</li>    
+         </ol>                            
+     </li>                            
+     <li>3ий маркированного списка</li>        
+</ul> -->
+
+
+
 						<?php
-						$i = 1;
 						foreach ($services as $row) :
 						?>
 							<tr>
 								<td scope="row">
-									<?= $i++ ?>
+									<?= $row->number ?>
 								</td>
 								<td>
 									<?= $row->name ?>
 								</td>
-								<td><?= $row->price ?></td>
 							</tr>
 						<?php
 						endforeach; ?>
@@ -46,7 +57,10 @@ $services = get_table('services');
 		</div>
 	</div>
 </section>
-
 <?php
+require("blocks/request.php");
 require("blocks/footer.php");
 ?>
+<script type="text/javascript" src="js/gallery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://use.fontawesome.com/b6af12b7e9.js"></script>
